@@ -1,7 +1,7 @@
 class TweetsController < ApplicationController
 
   def index
-    @tweets = Tweets.all.order(create_at: :desc)
+    @tweets = Tweet.all.order(created_at: :desc)
   end
 
   def new
@@ -16,7 +16,7 @@ class TweetsController < ApplicationController
     else
       render "new"
     end
-
+  end
     private
 
     def tweet_params
